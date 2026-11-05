@@ -367,14 +367,20 @@
 
     /* About */
 
-    .author-photo {
-  width: 180px;
-  height: 180px;
+.author-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.author-photo {
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
-  float: right;
-  margin: 0 0 25px 35px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 600px) {
@@ -805,10 +811,6 @@
 
     <section id="about" class="about">
       <div class="container">
-
-            <img src="author.png"
-         alt="Qiaoyuan Lin"
-         class="author-photo">
         
         <div class="about-content">
           <div class="section-label">
@@ -838,6 +840,11 @@
             and independence they need?
           </p>
 
+          <div class="author-profile">
+          <img src="author.png"
+           alt="Qiaoyuan Lin"
+           class="author-photo">
+          
           <p>
             <strong>Qiaoyuan Lin</strong><br>
             Author of <em>Studying in the UK</em>
