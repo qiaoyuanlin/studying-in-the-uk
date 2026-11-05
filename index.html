@@ -367,29 +367,57 @@
 
     /* About */
 
+
 .author-profile {
   display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-top: 35px;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 45px;
 }
 
 .author-photo {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
+.author-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.author-info h3 {
+  margin: 0 0 5px;
+  font-size: 23px;
+  color: var(--navy);
+}
+
+.author-role {
+  color: var(--green);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.author-info p {
+  line-height: 1.75;
+}
+
 @media (max-width: 600px) {
+  .author-profile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
   .author-photo {
-    float: none;
-    display: block;
-    margin: 0 0 25px;
+    width: 180px;
+    height: 180px;
   }
 }
+
     
     .about {
       background: var(--soft);
@@ -840,18 +868,39 @@
             and independence they need?
           </p>
 
-          <div class="author-profile">
+          
+<div class="author-profile">
+
   <img src="author.png"
        alt="Qiaoyuan Lin"
        class="author-photo">
-          
-          <p>
-            <strong>Qiaoyuan Lin</strong><br>
-            Author of <em>Studying in the UK</em>
-          </p>
-        </div>
 
-      </div>
+  <div class="author-info">
+    <h3>Qiaoyuan Lin</h3>
+
+    <p class="author-role">
+      Author of <em>Studying in the UK</em>
+    </p>
+
+    <p>
+      Qiaoyuan Lin is an Assistant Professor (Teaching)
+      at Coventry University, with experience in
+      economics education, curriculum leadership
+      and supporting student learning.
+    </p>
+
+    <p>
+      Her work focuses on how students develop
+      judgement, confidence and independence
+      in higher education. She is particularly
+      interested in how AI is changing the way
+      students learn, and how educators can
+      support meaningful learning in response.
+    </p>
+  </div>
+
+</div>
+
     </section>
 
   </main>
