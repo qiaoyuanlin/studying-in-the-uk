@@ -9,6 +9,23 @@
 
   <title>Studying in the UK | Learning with Judgement</title>
 
+  .author-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  float: right;
+  margin: 0 0 25px 35px;
+}
+
+@media (max-width: 600px) {
+  .author-photo {
+    float: none;
+    display: block;
+    margin: 0 0 25px;
+  }
+}
+  
   <style>
     :root {
       --navy: #20384e;
@@ -788,6 +805,10 @@
     <section id="about" class="about">
       <div class="container">
 
+            <img src="author.png"
+         alt="Qiaoyuan Lin"
+         class="author-photo">
+        
         <div class="about-content">
           <div class="section-label">
             About the Project
