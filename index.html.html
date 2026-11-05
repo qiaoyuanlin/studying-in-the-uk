@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Studying in the UK: book companion resources, learning activities and ideas about judgement, agency, confidence and Learning with AI.">
+
+  <title>Studying in the UK | Learning with Judgement</title>
+  
+  <style>
+    :root {
+      --navy: #20384e;
+      --navy-dark: #162d42;
+      --green: #54766d;
+      --ink: #34495b;
+      --muted: #60717d;
+      --background: #f8f9f7;
+      --white: #ffffff;
+      --line: #dfe7e6;
+      --soft: #eef3f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--navy);
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      min-height: 82px;
+    }
+
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 110px 0 105px;
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f1f5f3 100%
+      );
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      color: var(--navy);
+    }
+
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.13;
+      letter-spacing: -1.7px;
+      margin: 20px 0 25px;
+    }
+
+    .hero-subtitle {
+      font-family: Georgia, serif;
+      font-size: clamp(20px, 2.5vw, 29px);
+      line-height: 1.45;
+      color: var(--navy);
+      max-width: 760px;
+    }
+
+    .hero-description {
+      margin-top: 26px;
+      font-size: 17px;
+      max-width: 690px;
+      color: var(--muted);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .button-primary {
+      color: white;
+      background: var(--navy);
+    }
+
+    .button-primary:hover {
+      background: var(--green);
+    }
+
+    .button-secondary {
+      border: 1px solid #bdcecd;
+      color: var(--navy);
+      background: white;
+    }
+
+    .button-secondary:hover {
+      background: var(--soft);
+    }
+
+    /* General sections */
+
+    section {
+      padding: 85px 0;
+      scroll-margin-top: 30px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.25;
+      margin: 0 0 23px;
+    }
+
+    h3 {
+      font-size: 19px;
+      margin: 0 0 12px;
+    }
+
+    p {
+      margin: 0 0 17px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* Introduction */
+
+    .intro {
+      background: var(--white);
+    }
+
+    .intro-content {
+      max-width: 800px;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .principle {
+      border-top: 2px solid var(--green);
+      padding-top: 20px;
+    }
+
+    .principle span {
+      font-family: Georgia, serif;
+      font-size: 27px;
+      color: var(--green);
+    }
+
+    .principle h3 {
+      margin-top: 12px;
+    }
+
+    /* Cards */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .card-number {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .card h3 {
+      margin-top: 18px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .status {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--green);
+      background: var(--soft);
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    /* Book */
+
+    .book-section {
+      background: var(--soft);
+    }
+
+    .book-layout {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .book-placeholder {
+      background: var(--navy);
+      color: white;
+      padding: 55px 30px;
+      min-height: 345px;
+      box-shadow: 13px 13px 0 #d5dfdc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .book-placeholder .small {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #bdd1cb;
+    }
+
+    .book-placeholder .book-kicker {
+      color: #d7e2df;
+      font-family: Georgia, serif;
+      font-size: 19px;
+      line-height: 1.4;
+      margin-top: 24px;
+    }
+
+    .book-placeholder .book-title {
+      color: white;
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 3.5vw, 39px);
+      line-height: 1.17;
+      margin: 6px 0 24px;
+    }
+
+    .book-placeholder .book-subtitle {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #d7e2df;
+    }
+
+    /* AI section */
+
+    .ai-section {
+      background: var(--white);
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .ai-item {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--background);
+    }
+
+    .ai-item h3 {
+      margin-bottom: 10px;
+    }
+
+    .ai-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Explanatory elements introduced in this revision */
+    .system-note {
+      border-left: 3px solid var(--green);
+      padding: 15px 20px;
+      margin: 27px 0;
+      background: rgba(255,255,255,0.55);
+    }
+    .system-note h3 { margin-bottom: 8px; }
+    .system-note p { margin-bottom: 0; }
+    .ai-takeaway {
+      margin-top: 34px;
+      max-width: 780px;
+      padding: 25px 30px;
+      background: var(--soft);
+      border-left: 3px solid var(--green);
+    }
+    .ai-takeaway p:last-child { margin-bottom: 0; }
+    .resources-note { margin-top: 28px; color: var(--muted); }
+
+    /* About */
+
+
+    .author-profile {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      align-items: start;
+      gap: 38px;
+      margin-top: 45px;
+    }
+
+    .author-identity {
+      min-width: 0;
+    }
+
+    .author-photo {
+      display: block;
+      width: 220px;
+      height: 220px;
+      max-width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      margin-bottom: 18px;
+    }
+
+    .author-identity h3 {
+      font-size: 22px;
+      line-height: 1.3;
+      margin: 0 0 7px;
+      color: var(--navy);
+    }
+
+    .author-role {
+      color: var(--green);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .author-info p {
+      line-height: 1.75;
+    }
+
+    @media (max-width: 600px) {
+      .author-profile {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .author-photo {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+    .about {
+      background: var(--soft);
+    }
+
+    .about-content {
+      max-width: 900px;
+    }
+
+    /* Footer */
+
+    footer {
+      background: var(--navy-dark);
+      padding: 45px 0;
+      color: #d5e0e5;
+      font-size: 13px;
+    }
+
+    .footer-layout {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer strong {
+      font-family: Georgia, serif;
+      color: white;
+      font-size: 18px;
+    }
+
+    footer p {
+      margin: 5px 0 0;
+    }
+
+    footer a {
+      color: #d5e0e5;
+    }
+
+    /* Mobile and tablet */
+
+    @media (max-width: 760px) {
+      .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0;
+        gap: 16px;
+      }
+
+      nav {
+        gap: 14px 20px;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .principles,
+      .cards,
+      .ai-grid,
+      .book-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .book-layout {
+        gap: 35px;
+      }
+
+      .card {
+        padding: 25px;
+      }
+
+      .book-placeholder {
+        max-width: 350px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <div class="container navigation">
+      <a class="brand" href="#home">
+        Studying in the UK
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#book">The Book</a>
+        <a href="#resources">Resources</a>
+        <a href="#ai">Learning with AI</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="eyebrow">Learning · Judgement · Confidence</div>
+        <h1>Studying in the UK</h1>
+        <div class="hero-subtitle">
+          Developing Judgement, Agency and Confidence while Learning
+        </div>
+        <p class="hero-description">
+          Studying at university involves more than understanding what is expected of you.
+          There will be times when the instructions are clear, but the next step is not.
+          You may know what you need to achieve, yet feel uncertain about how to begin,
+          what to prioritise or which direction to take.
+        </p>
+        <p class="hero-description">
+          <em>Studying in the UK</em> explores how students can make sense of unfamiliar
+          situations, develop their own judgement and become more able to act on their decisions.
+          This website extends that work through practical resources, learning activities
+          and discussions about how we learn — including what it means to learn with AI.
+        </p>
+        <div class="buttons">
+          <a class="button button-primary" href="#book">Explore the Book</a>
+          <a class="button button-secondary" href="#resources">Learning Resources</a>
+          <a class="button button-secondary" href="#ai">Learning with AI</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE THINKING BEHIND THIS PROJECT -->
+    <section class="intro">
+      <div class="container">
+        <div class="intro-content">
+          <div class="section-label">The Thinking Behind This Project</div>
+          <h2>What should learning leave us able to do?</h2>
+          <p class="section-intro">
+            Education helps us acquire knowledge, develop skills and gain qualifications.
+            But what else should develop through the process?
+          </p>
+          <p class="section-intro">
+            Students regularly encounter moments that require more than following instructions:
+            interpreting an unfamiliar task, weighing different explanations, deciding what
+            matters, asking for help or choosing how to move forward when the answer is uncertain.
+          </p>
+          <p class="section-intro">
+            These moments offer opportunities to exercise judgement and agency. Yet recognising
+            an opportunity is not the same as being able to use it, and completing a task does
+            not necessarily mean that the learning will carry into another situation.
+          </p>
+          <p class="section-intro">
+            <em>Studying in the UK</em> explores how these capacities can become a more explicit
+            and intentional part of ordinary learning. Through teaching, practical activities
+            and reflection on students' experiences, the project asks what helps people
+            recognise their choices, exercise judgement, take purposeful action and learn
+            from what follows.
+          </p>
+          <p class="section-intro">
+            The aim is to develop approaches that can be tried, examined and improved —
+            within university study and, potentially, beyond it.
+          </p>
+        </div>
+        <div class="principles">
+          <div class="principle">
+            <span>01</span>
+            <h3>Understand</h3>
+            <p>Recognise what is happening, what is expected and what may be shaping your response.</p>
+          </div>
+          <div class="principle">
+            <span>02</span>
+            <h3>Make Judgements</h3>
+            <p>Consider your options, weigh reasons and decide what makes sense in your circumstances.</p>
+          </div>
+          <div class="principle">
+            <span>03</span>
+            <h3>Act and Learn</h3>
+            <p>Act on your decisions, reflect on what happens and develop confidence through experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section id="book" class="book-section">
+      <div class="container book-layout">
+        <div>
+          <div class="section-label">The Book</div>
+          <h2>Your Guide to Studying in the UK</h2>
+          <p><strong>Developing Judgement, Agency and Confidence while Learning</strong></p>
+          <p>
+            A forthcoming Routledge book for international students across disciplines.
+            It begins with familiar challenges: participating in classrooms, understanding
+            assignments, finding direction and developing your own thinking.
+          </p>
+          <p>
+            It then explores how students can make their thinking visible, manage
+            difficulties, learn with AI and work with others, before considering how
+            their learning can support decisions beyond university.
+          </p>
+          <p>
+            At its centre is a question: what can students develop through these
+            experiences that will remain useful when familiar guidance and structures
+            are no longer there?
+          </p>
+          <div class="system-note">
+            <h3>The QRenewal Learning System</h3>
+            <p>
+              The book brings its ideas together through QRenewal: a practical framework
+              of four connected capacities — Structure, Judgement, Rhythm and Collaboration —
+              grounded in Human Relationships. It is a way to reflect on learning and find
+              a starting point again, not a fixed method or a validated assessment.
+            </p>
+          </div>
+          <p>
+            This website will offer complementary activities and resources to help
+            readers explore and apply the book's ideas in practice.
+          </p>
+          <span class="status">Companion resources in development</span>
+        </div>
+        <div class="book-placeholder" aria-label="Illustrative book cover placeholder, not the official Routledge cover">
+          <div class="small">Routledge · Forthcoming</div>
+          <div class="book-kicker">Your Guide to</div>
+          <div class="book-title">Studying<br>in the UK</div>
+          <div class="book-subtitle">
+            Developing Judgement,<br>
+            Agency and Confidence<br>
+            while Learning
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources">
+      <div class="container">
+        <div class="section-label">Practical Learning</div>
+        <h2>Student Resources</h2>
+        <p class="section-intro">
+          The book offers Quick Practices and tools for turning ideas into action.
+          This section will develop complementary examples, reflection activities
+          and downloadable worksheets organised around challenges students actually face.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">RESOURCE 01</div>
+            <h3>Understanding an Assignment</h3>
+            <p>Work out what the brief asks, what the marking criteria value and where to begin.</p>
+            <span class="status">Coming soon</span>
+          </article>
+          <article class="card">
+            <div class="card-number">RESOURCE 02</div>
+            <h3>Finding Direction</h3>
+            <p>Reflect on where you are, what matters now and how to choose a manageable next step.</p>
+            <span class="status">Coming soon</span>
+          </article>
+          <article class="card">
+            <div class="card-number">RESOURCE 03</div>
+            <h3>Developing an Argument</h3>
+            <p>Connect ideas and evidence, make reasoning visible and reach a judgement you can defend.</p>
+            <span class="status">Coming soon</span>
+          </article>
+          <article class="card">
+            <div class="card-number">RESOURCE 04</div>
+            <h3>Learning Beyond University</h3>
+            <p>Consider what you are developing through study and what you can carry into unfamiliar situations.</p>
+            <span class="status">Coming soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING WITH AI -->
+    <section id="ai" class="ai-section">
+      <div class="container">
+        <div class="section-label">Learning in the Age of AI</div>
+        <h2>Learning with AI</h2>
+        <p class="section-intro">
+          AI is changing how students access information, develop ideas and complete
+          academic work. It can explain concepts, support analysis, provide feedback
+          and help us explore different approaches. But producing better work with AI
+          does not necessarily mean that we have learned more.
+        </p>
+        <p class="section-intro">
+          Learning with AI therefore involves more than knowing how to use a tool.
+          We need to consider how AI contributes to learning, which decisions remain
+          ours and what understanding and abilities we develop through the process.
+          The book introduces three checks to support that judgement.
+        </p>
+        <div class="ai-grid">
+          <div class="ai-item">
+            <h3>Boundary</h3>
+            <p>When and how should AI be used, and when might its involvement change the nature of our learning?</p>
+          </div>
+          <div class="ai-item">
+            <h3>Quality</h3>
+            <p>How can we examine AI outputs for direction, expression and meaning?</p>
+          </div>
+          <div class="ai-item">
+            <h3>Ownership</h3>
+            <p>What can we explain, justify and take responsibility for in the work we produce?</p>
+          </div>
+        </div>
+        <div class="ai-takeaway">
+          <h3>What remains with you?</h3>
+          <p>
+            After working with AI, can you explain the ideas, apply what you have
+            learned in another situation and make judgements without relying on
+            the same assistance?
+          </p>
+          <p>
+            Through developing workshops, examples and activities, this project
+            explores how AI can support meaningful learning while strengthening,
+            rather than replacing, human judgement and independence.
+          </p>
+        </div>
+        <p class="resources-note">Workshops and practical activities will be added as the project develops.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="section-label">About the Project</div>
+          <h2>About Studying in the UK</h2>
+          <p>
+            <em>Studying in the UK</em> is an educational project built around the
+            forthcoming Routledge book <em>Your Guide to Studying in the UK</em>.
+            It brings together ideas, practical resources and learning activities
+            to support students in navigating university life while developing
+            the judgement, agency and confidence that can remain valuable beyond
+            their degrees.
+          </p>
+          <p>
+            The project explores how students learn through everyday academic
+            experiences — understanding unfamiliar expectations, developing
+            their own thinking, making decisions, working with others and
+            responding to challenges.
+          </p>
+          <p>
+            An important part of this work is learning with AI. Rather than
+            focusing only on how to use AI effectively, the project considers
+            how students can work with intelligent tools while continuing to
+            develop their own understanding, exercise judgement, take
+            responsibility for their decisions and build abilities they can
+            use in new situations.
+          </p>
+          <p>
+            As the project develops, additional resources, examples and
+            activities will be introduced to help students put these ideas
+            into practice.
+          </p>
+
+          <div class="author-profile">
+            <div class="author-identity">
+              <img src="author.png" alt="Qiaoyuan Lin" class="author-photo" width="220" height="220">
+              <h3>Qiaoyuan Lin</h3>
+              <p class="author-role">Author of <em>Your Guide to Studying in the UK</em></p>
+            </div>
+            <div class="author-info">
+              <p>
+                Dr Qiaoyuan Lin has worked in UK higher education for more than fifteen
+                years. At Coventry University, she has held teaching and leadership
+                roles including Associate Professor, Associate Head of School for
+                Student Experience, and Curriculum Lead for Economics.
+              </p>
+              <p>
+                Her work spans economics education, curriculum development, assessment
+                and doctoral supervision. She developed the QRenewal Learning System
+                to help students strengthen the capacities they need to navigate
+                learning, make decisions and find their own direction. Her current
+                interests include learning with AI, judgement and independence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-layout">
+
+      <div>
+        <strong>Studying in the UK</strong>
+        <p>
+          Learning with judgement, agency and confidence.
+        </p>
+      </div>
+
+      <div>
+        © <span id="year">2026</span> Qiaoyuan Lin.
+        All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
