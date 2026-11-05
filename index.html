@@ -291,58 +291,83 @@
       margin-top: 12px;
     }
 
-    /* Book */
-
-    .book-section {
-      background: var(--soft);
-    }
-
+    /* Book: editorial two-column opening, with a full-width supporting note */
+    .book-section { background: var(--soft); }
     .book-layout {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 60px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+      column-gap: clamp(36px, 6vw, 90px);
+      row-gap: 38px;
+      align-items: start;
     }
-
+    .book-copy { max-width: 650px; }
+    .book-copy h2 { margin-bottom: 12px; }
+    .book-copy .book-heading-prefix {
+      display: block;
+      font-size: clamp(18px, 2.3vw, 23px);
+      font-family: Georgia, serif;
+      line-height: 1.3;
+      margin-bottom: 4px;
+      color: var(--green);
+    }
+    .book-copy .book-heading-main { display: block; }
+    .book-copy .book-subheading {
+      color: var(--navy);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .book-copy p { max-width: 610px; }
     .book-placeholder {
       background: var(--navy);
       color: white;
-      padding: 55px 30px;
-      min-height: 345px;
+      padding: 45px 34px;
+      min-height: 400px;
+      width: 100%;
+      max-width: 360px;
+      justify-self: end;
+      margin-top: 12px;
       box-shadow: 13px 13px 0 #d5dfdc;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
-
     .book-placeholder .small {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: #bdd1cb;
     }
-
     .book-placeholder .book-kicker {
-      color: #d7e2df;
       font-family: Georgia, serif;
-      font-size: 19px;
+      color: #d7e2df;
+      font-size: 15px;
       line-height: 1.4;
-      margin-top: 24px;
+      margin-top: 30px;
     }
-
     .book-placeholder .book-title {
-      color: white;
       font-family: Georgia, serif;
-      font-size: clamp(30px, 3.5vw, 39px);
-      line-height: 1.17;
-      margin: 6px 0 24px;
+      color: white;
+      font-size: clamp(37px, 3.5vw, 46px);
+      line-height: 1.13;
+      margin: 7px 0 24px;
     }
-
     .book-placeholder .book-subtitle {
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 13px;
+      line-height: 1.65;
       color: #d7e2df;
     }
+    .book-afterword {
+      grid-column: 1 / -1;
+      border-top: 1px solid #cfdcd7;
+      padding-top: 27px;
+      display: grid;
+      grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.7fr);
+      gap: 18px 50px;
+      align-items: start;
+    }
+    .book-afterword h3 { margin: 0; font-size: 20px; }
+    .book-afterword p { margin-bottom: 10px; }
+    .book-afterword .status { margin-top: 5px; }
 
     /* AI section */
 
@@ -373,15 +398,7 @@
       font-size: 14px;
     }
 
-    /* Explanatory elements introduced in this revision */
-    .system-note {
-      border-left: 3px solid var(--green);
-      padding: 15px 20px;
-      margin: 27px 0;
-      background: rgba(255,255,255,0.55);
-    }
-    .system-note h3 { margin-bottom: 8px; }
-    .system-note p { margin-bottom: 0; }
+    /* AI takeaway and resource note */
     .ai-takeaway {
       margin-top: 34px;
       max-width: 780px;
@@ -398,54 +415,36 @@
     .author-profile {
       display: grid;
       grid-template-columns: 220px minmax(0, 1fr);
+      gap: 36px;
       align-items: start;
-      gap: 38px;
-      margin-top: 45px;
+      margin-top: 42px;
+      padding-top: 32px;
+      border-top: 1px solid #cfdcd7;
     }
-
-    .author-identity {
-      min-width: 0;
-    }
-
     .author-photo {
       display: block;
       width: 220px;
       height: 220px;
-      max-width: 100%;
       object-fit: cover;
       object-position: center;
       border-radius: 50%;
-      margin-bottom: 18px;
     }
-
-    .author-identity h3 {
-      font-size: 22px;
-      line-height: 1.3;
-      margin: 0 0 7px;
-      color: var(--navy);
+    .author-info h3 {
+      font-size: 24px;
+      line-height: 1.25;
+      margin: 0 0 6px;
     }
-
     .author-role {
       color: var(--green);
-      font-weight: 500;
       font-size: 14px;
       line-height: 1.55;
-      margin: 0;
+      font-weight: 600;
+      margin: 0 0 18px;
     }
-
-    .author-info p {
-      line-height: 1.75;
-    }
-
+    .author-info p { line-height: 1.75; }
     @media (max-width: 600px) {
-      .author-profile {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .author-photo {
-        width: 180px;
-        height: 180px;
-      }
+      .author-profile { grid-template-columns: 1fr; gap: 22px; }
+      .author-photo { width: 190px; height: 190px; }
     }
 
     .about {
@@ -517,7 +516,15 @@
       }
 
       .book-layout {
-        gap: 35px;
+        gap: 34px;
+      }
+      .book-placeholder {
+        justify-self: start;
+        margin-top: 0;
+      }
+      .book-afterword {
+        grid-template-columns: 1fr;
+        gap: 12px;
       }
 
       .card {
@@ -642,40 +649,27 @@
     <!-- BOOK -->
     <section id="book" class="book-section">
       <div class="container book-layout">
-        <div>
+        <div class="book-copy">
           <div class="section-label">The Book</div>
-          <h2>Your Guide to Studying in the UK</h2>
-          <p><strong>Developing Judgement, Agency and Confidence while Learning</strong></p>
+          <h2><span class="book-heading-prefix">Your Guide to</span><span class="book-heading-main">Studying in the UK</span></h2>
+          <p class="book-subheading">Developing Judgement, Agency and Confidence while Learning</p>
           <p>
-            A forthcoming Routledge book for international students across disciplines.
-            It begins with familiar challenges: participating in classrooms, understanding
-            assignments, finding direction and developing your own thinking.
+            Forthcoming from Routledge, the book is written for international students
+            across disciplines. It begins with experiences many students recognise:
+            finding their voice in class, making sense of assignments, and working out
+            how to move forward when the next step is unclear.
           </p>
           <p>
-            It then explores how students can make their thinking visible, manage
-            difficulties, learn with AI and work with others, before considering how
-            their learning can support decisions beyond university.
+            Through student experiences, practical guidance and reflection, it explores
+            how we develop judgement, make choices, learn with others and AI, and
+            build confidence through practice.
           </p>
           <p>
-            At its centre is a question: what can students develop through these
-            experiences that will remain useful when familiar guidance and structures
-            are no longer there?
+            The book looks beyond completing a degree to consider what we develop
+            through learning — and what we can carry into the situations that come next.
           </p>
-          <div class="system-note">
-            <h3>The QRenewal Learning System</h3>
-            <p>
-              The book brings its ideas together through QRenewal: a practical framework
-              of four connected capacities — Structure, Judgement, Rhythm and Collaboration —
-              grounded in Human Relationships. It is a way to reflect on learning and find
-              a starting point again, not a fixed method or a validated assessment.
-            </p>
-          </div>
-          <p>
-            This website will offer complementary activities and resources to help
-            readers explore and apply the book's ideas in practice.
-          </p>
-          <span class="status">Companion resources in development</span>
         </div>
+
         <div class="book-placeholder" aria-label="Illustrative book cover placeholder, not the official Routledge cover">
           <div class="small">Routledge · Forthcoming</div>
           <div class="book-kicker">Your Guide to</div>
@@ -684,6 +678,23 @@
             Developing Judgement,<br>
             Agency and Confidence<br>
             while Learning
+          </div>
+        </div>
+
+        <div class="book-afterword">
+          <h3>The QRenewal Learning System</h3>
+          <div>
+            <p>
+              The book brings its ideas together through QRenewal, a practical framework
+              that connects Structure, Judgement, Rhythm and Collaboration, grounded in
+              Human Relationships. It helps readers reflect on their learning and find
+              a starting point again, rather than offering a fixed formula.
+            </p>
+            <p>
+              This website will offer complementary activities and resources to help
+              readers explore and apply the book's ideas in practice.
+            </p>
+            <span class="status">Companion resources in development</span>
           </div>
         </div>
       </div>
@@ -811,12 +822,10 @@
           </p>
 
           <div class="author-profile">
-            <div class="author-identity">
-              <img src="author.png" alt="Qiaoyuan Lin" class="author-photo" width="220" height="220">
+            <img src="author.png" alt="Qiaoyuan Lin" class="author-photo" width="220" height="220">
+            <div class="author-info">
               <h3>Qiaoyuan Lin</h3>
               <p class="author-role">Author of <em>Your Guide to Studying in the UK</em></p>
-            </div>
-            <div class="author-info">
               <p>
                 Dr Qiaoyuan Lin has worked in UK higher education for more than fifteen
                 years. At Coventry University, she has held teaching and leadership
@@ -826,9 +835,9 @@
               <p>
                 Her work spans economics education, curriculum development, assessment
                 and doctoral supervision. She developed the QRenewal Learning System
-                to help students strengthen the capacities they need to navigate
-                learning, make decisions and find their own direction. Her current
-                interests include learning with AI, judgement and independence.
+                to help students recognise capacities that support learning and finding
+                their own direction. Her current interests include learning with AI,
+                judgement and independence.
               </p>
             </div>
           </div>
