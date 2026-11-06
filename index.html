@@ -553,6 +553,39 @@
         scroll-behavior: auto;
       }
     }
+
+    /* Homepage artwork */
+    .hero-art {
+      background: #f8f3e8 url("hero-artwork.png") center center / cover no-repeat;
+      min-height: 680px;
+      padding: 0;
+    }
+    .hero-art-inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 680px;
+    }
+    .hero-art-copy {
+      width: 50%;
+      max-width: 555px;
+      padding: 54px 0 54px 12px;
+    }
+    .hero-art h1 { font-size: clamp(43px, 4.2vw, 61px); margin: 14px 0 16px; }
+    .hero-art .hero-subtitle {font-size:clamp(18px,1.75vw,24px);line-height:1.4;}
+    .hero-art .hero-question {font-size:clamp(21px,2vw,28px);line-height:1.25;margin:29px 0 10px;}
+    .hero-art .hero-description { font-size:15px;line-height:1.65;margin-top:9px; }
+    .hero-art .buttons {margin-top:21px;gap:8px;}
+    .hero-art .button {padding:10px 14px;font-size:12px;}
+    @media(max-width:760px){
+      .hero-art {background: #faf7f0; padding:0;min-height:auto;}
+      .hero-art::before {content:"";display:block;height:230px;background:url("hero-artwork.png") 18% center/cover no-repeat;}
+      .hero-art-inner {min-height:auto;display:block;}
+      .hero-art-copy {width:100%;max-width:none;padding:24px 0 45px;}
+      .hero-art h1 {font-size:44px;}
+      .hero-art .buttons {flex-wrap:wrap;}
+    }
+
   </style>
 </head>
 
@@ -578,81 +611,20 @@
 
   <main>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-      <div class="container">
-        <div class="eyebrow">Learning · Judgement · Confidence</div>
-        <h1>Studying in the UK</h1>
-        <div class="hero-subtitle">
-          Developing Judgement, Agency and Confidence while Learning
-        </div>
-        <p class="hero-description">
-          Studying at university involves more than understanding what is expected of you.
-          There will be times when the instructions are clear, but the next step is not.
-          You may know what you need to achieve, yet feel uncertain about how to begin,
-          what to prioritise or which direction to take.
-        </p>
-        <p class="hero-description">
-          <em>Studying in the UK</em> explores how students can make sense of unfamiliar
-          situations, develop their own judgement and become more able to act on their decisions.
-          This website extends that work through practical resources, learning activities
-          and discussions about how we learn — including what it means to learn with AI.
-        </p>
-        <div class="buttons">
-          <a class="button button-primary" href="#book">Explore the Book</a>
-          <a class="button button-secondary" href="#resources">Learning Resources</a>
-          <a class="button button-secondary" href="#ai">Learning with AI</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- THE THINKING BEHIND THIS PROJECT -->
-    <section class="intro">
-      <div class="container">
-        <div class="intro-content">
-          <div class="section-label">The Thinking Behind This Project</div>
-          <h2>What should learning leave us able to do?</h2>
-          <p class="section-intro">
-            Education helps us acquire knowledge, develop skills and gain qualifications.
-            But what else should develop through the process?
-          </p>
-          <p class="section-intro">
-            Students regularly encounter moments that require more than following instructions:
-            interpreting an unfamiliar task, weighing different explanations, deciding what
-            matters, asking for help or choosing how to move forward when the answer is uncertain.
-          </p>
-          <p class="section-intro">
-            These moments offer opportunities to exercise judgement and agency. Yet recognising
-            an opportunity is not the same as being able to use it, and completing a task does
-            not necessarily mean that the learning will carry into another situation.
-          </p>
-          <p class="section-intro">
-            <em>Studying in the UK</em> explores how these capacities can become a more explicit
-            and intentional part of ordinary learning. Through teaching, practical activities
-            and reflection on students' experiences, the project asks what helps people
-            recognise their choices, exercise judgement, take purposeful action and learn
-            from what follows.
-          </p>
-          <p class="section-intro">
-            The aim is to develop approaches that can be tried, examined and improved —
-            within university study and, potentially, beyond it.
-          </p>
-        </div>
-        <div class="principles">
-          <div class="principle">
-            <span>01</span>
-            <h3>Understand</h3>
-            <p>Recognise what is happening, what is expected and what may be shaping your response.</p>
-          </div>
-          <div class="principle">
-            <span>02</span>
-            <h3>Make Judgements</h3>
-            <p>Consider your options, weigh reasons and decide what makes sense in your circumstances.</p>
-          </div>
-          <div class="principle">
-            <span>03</span>
-            <h3>Act and Learn</h3>
-            <p>Act on your decisions, reflect on what happens and develop confidence through experience.</p>
+    <!-- HOMEPAGE ARTWORK -->
+    <section id="home" class="hero hero-art" aria-label="Studying in the UK — an illustrated British university and abstract Union Jack colours">
+      <div class="container hero-art-inner">
+        <div class="hero-art-copy">
+          <div class="eyebrow">Learning · Judgement · Confidence</div>
+          <h1>Studying in the UK</h1>
+          <div class="hero-subtitle">Developing Judgement, Agency and Confidence while Learning</div>
+          <h2 class="hero-question">What should learning leave us able to do?</h2>
+          <p class="hero-description">Studying at university is about more than gaining knowledge and qualifications. It means learning to understand unfamiliar situations, make judgements and find your own way forward.</p>
+          <p class="hero-description">Explore practical activities and resources that help you put these ideas into practice, including learning with AI.</p>
+          <div class="buttons">
+            <a class="button button-primary" href="#ai">Practice &amp; Quizzes</a>
+            <a class="button button-secondary" href="#book">Explore the Book</a>
+            <a class="button button-secondary" href="#resources">Student Resources</a>
           </div>
         </div>
       </div>
