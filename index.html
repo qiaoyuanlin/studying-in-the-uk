@@ -325,7 +325,7 @@
       width: 100%;
       max-width: 360px;
       justify-self: end;
-      margin-top: 12px;
+      margin-top: 54px;
       box-shadow: 13px 13px 0 #d5dfdc;
       display: flex;
       flex-direction: column;
@@ -378,7 +378,8 @@
       column-gap: clamp(25px, 4vw, 55px);
       row-gap: 16px;
     }
-    .qrenewal-heading { grid-column: 1 / -1; text-align: center; }
+    .qrenewal-visual { min-width: 0; }
+    .qrenewal-heading { text-align: center; margin-bottom: 18px; }
     .qrenewal-heading h3 {
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(24px, 2.5vw, 30px);
@@ -393,10 +394,10 @@
       font-size: 15px;
       font-style: italic;
     }
-    .qrenewal-figure { width: 100%; max-width: 410px; margin: 0; align-self: start; }
+    .qrenewal-figure { width: 100%; max-width: 410px; margin: 0 auto; }
     .qrenewal-figure img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 8px; }
     .qrenewal-figure figcaption { margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.5; text-align: center; }
-    .qrenewal-content { min-width: 0; }
+    .qrenewal-content { min-width: 0; padding-top: 66px; }
     .qrenewal-content p { margin: 0 0 11px; }
     .qrenewal-content .qrenewal-motto {
       margin: 0 0 14px;
@@ -453,7 +454,7 @@
     .qrenewal-privacy { font-size: 12px !important; color: var(--muted); margin: 8px 0 0 !important; }
     @media (max-width: 760px) {
       .book-afterword { grid-template-columns: 1fr; gap: 13px; }
-      .qrenewal-heading { grid-column: auto; }
+      .qrenewal-content { padding-top: 0; }
       .qrenewal-figure { max-width: 360px; }
       .qrenewal-check { padding: 14px; }
     }
@@ -755,16 +756,17 @@
         </div>
 
         <div class="book-afterword" aria-labelledby="qrenewal-title">
-          <div class="qrenewal-heading">
-            <h3 id="qrenewal-title">The QRenewal Learning System</h3>
-            <p class="qrenewal-subtitle">Building the Inner Capacities for Learning and Life</p>
+          <div class="qrenewal-visual">
+            <div class="qrenewal-heading">
+              <h3 id="qrenewal-title">The QRenewal Learning System</h3>
+              <p class="qrenewal-subtitle">Building the Inner Capacities for Learning and Life</p>
+            </div>
+            <figure class="qrenewal-figure">
+              <img src="qrenewal-system-square.png" alt="QRenewal diagram: Judgement at the centre, with Structure above, Rhythm and Collaboration alongside, all grounded in a surrounding Human Relationships ring." loading="lazy" width="1254" height="1254">
+              <figcaption>QRenewal Learning System, from the Interlude of <em>Studying in the UK</em> (Qiaoyuan Lin). Website illustration.</figcaption>
+            </figure>
           </div>
-          <figure class="qrenewal-figure">
-            <img src="qrenewal-system-square.png" alt="QRenewal diagram: Judgement at the centre, with Structure above, Rhythm and Collaboration alongside, all grounded in a surrounding Human Relationships ring." loading="lazy" width="1254" height="1254">
-            <figcaption>QRenewal Learning System, from the Interlude of <em>Studying in the UK</em> (Qiaoyuan Lin). Website illustration.</figcaption>
-          </figure>
           <div class="qrenewal-content">
-            <p class="qrenewal-motto">Judgement decides · Agency moves · Confidence accumulates</p>
             <p>
               The QRenewal Learning System brings together four connected capacities—Structure,
               Judgement, Rhythm and Collaboration—supported by Human Relationships.
