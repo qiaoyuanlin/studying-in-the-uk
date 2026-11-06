@@ -387,6 +387,18 @@
       border: 1px solid var(--line);
       border-radius: 6px;
       background: var(--background);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .ai-item .button,
+    .ai-item .status {
+      margin-top: auto;
+    }
+
+    .ai-item p {
+      margin-bottom: 24px;
     }
 
     .ai-item h3 {
@@ -760,22 +772,18 @@
           <div class="ai-item">
             <h3>Boundary</h3>
             <p>When and how should AI be used, and when might its involvement change the nature of our learning?</p>
+            <a class="button button-primary" href="boundary-check.html">Start Boundary Check</a>
           </div>
           <div class="ai-item">
             <h3>Quality</h3>
             <p>How can we examine AI outputs for direction, expression and meaning?</p>
+            <span class="status">Coming soon</span>
           </div>
           <div class="ai-item">
             <h3>Ownership</h3>
             <p>What can we explain, justify and take responsibility for in the work we produce?</p>
+            <span class="status">Coming soon</span>
           </div>
-        </div>
-        <!-- Practice & Quizzes: first available activity -->
-        <div class="ai-takeaway" aria-labelledby="boundary-practice-title">
-          <div class="section-label">Practice &amp; Quizzes</div>
-          <h3 id="boundary-practice-title">Boundary Check</h3>
-          <p>Five short situations to help you decide when and how to use AI in your academic work. Review your answers and explanations at the end.</p>
-          <a class="button button-primary" href="boundary-check.html">Start Boundary Check</a>
         </div>
         <div class="ai-takeaway">
           <h3>What remains with you?</h3>
