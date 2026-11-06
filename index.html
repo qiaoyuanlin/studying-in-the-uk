@@ -378,7 +378,7 @@
       column-gap: clamp(25px, 4vw, 55px);
       row-gap: 16px;
     }
-    .qrenewal-heading { grid-column: 1 / -1; }
+    .qrenewal-heading { grid-column: 1 / -1; text-align: center; }
     .qrenewal-heading h3 {
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(24px, 2.5vw, 30px);
@@ -402,8 +402,19 @@
       font-size: clamp(18px, 1.9vw, 23px);
       line-height: 1.4;
     }
+    .qrenewal-book-link { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+    .qrenewal-book-link:hover { color: var(--navy); }
+    .qrenewal-check-intro { margin-top: 17px; }
+    .qrenewal-check-intro h4 {
+      margin: 0 0 7px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      font-size: 19px;
+    }
+    .qrenewal-check-intro p { margin: 0 0 9px; }
     .qrenewal-check {
-      margin-top: 19px;
+      margin-top: 10px;
       padding: 16px 18px;
       background: rgba(255,255,255,.68);
       border: 1px solid #cfdcd7;
@@ -762,15 +773,29 @@
           <div class="qrenewal-content">
             <p class="qrenewal-motto">Judgement decides · Agency moves · Confidence accumulates</p>
             <p>
-              QRenewal brings together four connected capacities—Structure, Judgement,
-              Rhythm and Collaboration—supported by Human Relationships. These are
-              capacities you may already use in your learning, not another set of study techniques.
+              Introduced in the Interlude of <a class="qrenewal-book-link" href="#book"><em>Studying in the UK</em></a>,
+              the QRenewal Learning System brings together four connected capacities—Structure,
+              Judgement, Rhythm and Collaboration—supported by Human Relationships.
             </p>
             <p>
-              The system offers a way to notice what is helping, recognise what needs
-              attention and find a starting point again. It is a practical framework,
-              not a fixed formula.
+              These are capacities you may already draw upon in your learning. The system
+              offers a way to recognise what is helping, notice what needs attention and find
+              a starting point again. It is not a fixed formula.
             </p>
+            <div class="qrenewal-check-intro" aria-labelledby="qrenewal-reflection-title">
+              <h4 id="qrenewal-reflection-title">A moment to reflect</h4>
+              <p>
+                You do not need to have read the book to try this activity. Think about
+                something you are learning or working on. You may be making good progress,
+                feeling stuck or unsure what to do next.
+              </p>
+              <p>
+                The Quiet Self-Check helps you consider five areas of your learning and
+                identify where a little attention might make a difference. There are no scores
+                or right answers. The aim is to understand your current situation and choose
+                one manageable next step.
+              </p>
+            </div>
             <details class="qrenewal-check">
               <summary>A Quiet Self-Check</summary>
               <p class="qrenewal-check-note">Reflect on your learning · Choose one next step · No scores</p>
