@@ -9,6 +9,7 @@
 
   <title>Studying in the UK | Learning with Judgement</title>
   
+  <script>document.documentElement.classList.add("js");</script>
   <style>
     :root {
       --navy: #20384e;
@@ -589,6 +590,66 @@
       .hero-art .buttons {flex-wrap:wrap;}
     }
 
+
+    /* Mobile navigation and hero refinements — desktop rules are unchanged */
+    .mobile-menu-toggle { display: none; }
+    @media (max-width: 760px) {
+      .navigation {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0 12px;
+        min-height: 66px;
+        padding: 12px 0;
+      }
+      .brand { font-size: 19px; line-height: 1.3; }
+      .js .mobile-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        padding: 10px 12px;
+        font: 600 13px "Segoe UI", Arial, sans-serif;
+        color: var(--navy);
+        background: var(--white);
+        cursor: pointer;
+        min-height: 44px;
+      }
+      .mobile-menu-toggle:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+      .menu-lines { width: 18px; display: grid; gap: 4px; }
+      .menu-lines span { display: block; height: 2px; border-radius: 2px; background: var(--navy); }
+      .navigation nav { grid-column: 1 / -1; display: flex; gap: 0; width: 100%; padding-top: 10px; }
+      .js .navigation nav { display: none; }
+      .js .navigation nav.is-open { display: flex; flex-direction: column; }
+      .navigation nav a {
+        display: block; width: 100%; padding: 11px 5px;
+        border-top: 1px solid var(--line);
+        font-size: 14px;
+      }
+      .hero-art { background: #faf7f0; min-height: 0; padding: 0; }
+      .hero-art::before {
+        content: ""; display: block; height: 152px;
+        background: url("hero-artwork.png") 18% 45% / cover no-repeat;
+      }
+      .hero-art-inner { min-height: 0; display: block; }
+      .hero-art-copy { width: 100%; max-width: none; padding: 23px 0 35px; }
+      .hero-art .eyebrow { font-size: 10px; letter-spacing: 1.4px; line-height: 1.5; }
+      .hero-art h1 { font-size: clamp(32px, 8.6vw, 40px); letter-spacing: -1px; margin: 11px 0 12px; }
+      .hero-art .hero-subtitle { font-size: clamp(17px, 4.4vw, 21px); line-height: 1.38; }
+      .hero-art .hero-question { font-size: clamp(22px, 5.5vw, 26px); margin: 19px 0 8px; line-height: 1.3; }
+      .hero-art .hero-description { font-size: 15px; line-height: 1.6; margin: 8px 0 12px; }
+      .hero-art .buttons { margin-top: 18px; gap: 9px; }
+      .hero-art .button { font-size: 13px; padding: 11px 13px; min-height: 44px; }
+      section { padding: 48px 0; }
+      .qrenewal-figure { max-width: 270px; }
+    }
+    @media (max-width: 380px) {
+      .brand { font-size: 17px; }
+      .hero-art::before { height: 130px; }
+      .hero-art .button { width: 100%; text-align: center; }
+    }
+
   </style>
 </head>
 
@@ -602,7 +663,10 @@
         Studying in the UK
       </a>
 
-      <nav aria-label="Main navigation">
+      <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
+        <span class="menu-label">Menu</span><span class="menu-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <nav id="main-menu" aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#book">The Book</a>
         <a href="#resources">Resources</a>
@@ -862,6 +926,23 @@
   <script>
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+    const menuButton = document.querySelector(".mobile-menu-toggle");
+    const mainMenu = document.getElementById("main-menu");
+    function closeMobileMenu() {
+      mainMenu.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open navigation menu");
+    }
+    menuButton.addEventListener("click", () => {
+      const opening = !mainMenu.classList.contains("is-open");
+      mainMenu.classList.toggle("is-open", opening);
+      menuButton.setAttribute("aria-expanded", String(opening));
+      menuButton.setAttribute("aria-label", opening ? "Close navigation menu" : "Open navigation menu");
+    });
+    mainMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMobileMenu));
+    document.addEventListener("keydown", event => { if (event.key === "Escape") closeMobileMenu(); });
+    window.matchMedia("(min-width: 761px)").addEventListener("change", event => { if (event.matches) closeMobileMenu(); });
   </script>
 
 </body>
