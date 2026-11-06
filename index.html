@@ -372,6 +372,89 @@
     .book-afterword p { margin-bottom: 10px; }
     .book-afterword .status { margin-top: 5px; }
 
+    /* QRenewal: book Interlude companion */
+    .book-afterword {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.45fr);
+      column-gap: clamp(25px, 4vw, 55px);
+      row-gap: 16px;
+    }
+    .qrenewal-heading { grid-column: 1 / -1; }
+    .qrenewal-heading h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(24px, 2.5vw, 30px);
+      font-weight: normal;
+      line-height: 1.25;
+      margin: 0 0 3px;
+    }
+    .qrenewal-subtitle {
+      margin: 0;
+      color: var(--green);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 15px;
+      font-style: italic;
+    }
+    .qrenewal-figure { width: 100%; max-width: 410px; margin: 0; align-self: start; }
+    .qrenewal-figure img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 8px; }
+    .qrenewal-content { min-width: 0; }
+    .qrenewal-content p { margin: 0 0 11px; }
+    .qrenewal-content .qrenewal-motto {
+      margin: 0 0 14px;
+      font-size: clamp(18px, 1.9vw, 23px);
+      line-height: 1.4;
+    }
+    .qrenewal-check {
+      margin-top: 19px;
+      padding: 16px 18px;
+      background: rgba(255,255,255,.68);
+      border: 1px solid #cfdcd7;
+      border-radius: 8px;
+    }
+    .qrenewal-check > summary {
+      cursor: pointer;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: 600;
+    }
+    .qrenewal-check > summary:hover { color: var(--green); }
+    .qrenewal-check > summary:focus-visible,
+    .qrenewal-capacity > summary:focus-visible,
+    .qrenewal-reset:focus-visible,
+    .qrenewal-check textarea:focus-visible,
+    .qrenewal-check input:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 3px;
+    }
+    .qrenewal-check-note { margin: 8px 0 0 !important; font-size: 13px; color: var(--muted); }
+    .qrenewal-check-body { padding-top: 12px; }
+    .qrenewal-check-body > p { font-size: 14px; }
+    .qrenewal-capacity { border-top: 1px solid var(--line); padding: 10px 0; }
+    .qrenewal-capacity > summary { cursor: pointer; font-weight: 600; font-size: 14px; color: var(--navy); }
+    .qrenewal-capacity fieldset { border: 0; padding: 6px 0 0; margin: 0; min-width: 0; }
+    .qrenewal-capacity legend { font-size: 13px; font-weight: 600; color: var(--muted); padding: 0 0 4px; }
+    .qrenewal-option { display: flex; gap: 10px; align-items: flex-start; margin: 7px 0; font-size: 14px; line-height: 1.5; cursor: pointer; }
+    .qrenewal-option input { accent-color: var(--green); margin-top: 4px; flex: 0 0 auto; }
+    .qrenewal-next { border-top: 1px solid var(--line); padding-top: 13px; margin-top: 5px; }
+    .qrenewal-next label { display: block; margin: 12px 0 5px; font-size: 14px; font-weight: 600; }
+    .qrenewal-check textarea {
+      width: 100%; resize: vertical; min-height: 64px; padding: 9px 11px;
+      border: 1px solid #bbcfc7; border-radius: 5px;
+      color: var(--ink); background: white; font: inherit; font-size: 14px;
+    }
+    .qrenewal-reset {
+      background: transparent; border: 1px solid #bbcfc7; border-radius: 5px;
+      padding: 7px 12px; margin-top: 9px; color: var(--navy);
+      font: inherit; font-size: 13px; cursor: pointer;
+    }
+    .qrenewal-reset:hover { background: var(--soft); }
+    .qrenewal-privacy { font-size: 12px !important; color: var(--muted); margin: 8px 0 0 !important; }
+    @media (max-width: 760px) {
+      .book-afterword { grid-template-columns: 1fr; gap: 13px; }
+      .qrenewal-heading { grid-column: auto; }
+      .qrenewal-figure { max-width: 360px; }
+      .qrenewal-check { padding: 14px; }
+    }
+
     /* AI section */
 
     .ai-section {
@@ -668,23 +751,91 @@
           </div>
         </div>
 
-        <div class="book-afterword">
+        <div class="book-afterword" aria-labelledby="qrenewal-title">
+          <div class="qrenewal-heading">
+            <h3 id="qrenewal-title">The QRenewal Learning System</h3>
+            <p class="qrenewal-subtitle">Building the Inner Capacities for Learning and Life</p>
+          </div>
           <figure class="qrenewal-figure">
-            <img src="qrenewal-system.png" alt="The QRenewal Learning System: judgement at the centre, connected with structure, rhythm and collaboration, supported by human relationships." loading="lazy" width="1084" height="1440">
+            <img src="qrenewal-system-square.png" alt="QRenewal diagram: Judgement at the centre, with Structure above, Rhythm and Collaboration alongside, all grounded in a surrounding Human Relationships ring." loading="lazy" width="1254" height="1254">
           </figure>
-          <div>
+          <div class="qrenewal-content">
             <p class="qrenewal-motto">Judgement decides · Agency moves · Confidence accumulates</p>
             <p>
-              The book brings its ideas together through QRenewal, a practical framework
-              that connects Structure, Judgement, Rhythm and Collaboration, grounded in
-              Human Relationships. It helps readers reflect on their learning and find
-              a starting point again, rather than offering a fixed formula.
+              QRenewal brings together four connected capacities—Structure, Judgement,
+              Rhythm and Collaboration—supported by Human Relationships. These are
+              capacities you may already use in your learning, not another set of study techniques.
             </p>
             <p>
-              This website will offer complementary activities and resources to help
-              readers explore and apply the book's ideas in practice.
+              The system offers a way to notice what is helping, recognise what needs
+              attention and find a starting point again. It is a practical framework,
+              not a fixed formula.
             </p>
-            <span class="status">Companion resources in development</span>
+            <details class="qrenewal-check">
+              <summary>A Quiet Self-Check</summary>
+              <p class="qrenewal-check-note">Reflect on your learning · Choose one next step · No scores</p>
+              <div class="qrenewal-check-body">
+                <p>Think about an assignment, project or another task you are working on. What are you trying to achieve, and what stage have you reached?</p>
+                <p>Tick any statements that describe your current situation. This is not an assessment of your ability or worth.</p>
+                <form class="qrenewal-check-form">
+                <details class="qrenewal-capacity">
+                  <summary>1. Structure</summary>
+                  <fieldset><legend>Do I know what I am doing?</legend>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-1" value="1"> <span>I understand the task in front of me.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-1" value="2"> <span>I know the next small step.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-1" value="3"> <span>I can see how the parts of this fit together.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-1" value="4"> <span>My deadlines and materials are somewhere I can find them.</span></label>
+                  </fieldset>
+                </details>
+                <details class="qrenewal-capacity">
+                  <summary>2. Judgement</summary>
+                  <fieldset><legend>Am I working out what matters and what I can stand behind?</legend>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-2" value="1"> <span>I can identify what matters most here.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-2" value="2"> <span>I can name what is still unclear to me.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-2" value="3"> <span>I question, compare, or test before I settle on a view.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-2" value="4"> <span>I can explain the position I have reached and why.</span></label>
+                  </fieldset>
+                </details>
+                <details class="qrenewal-capacity">
+                  <summary>3. Rhythm</summary>
+                  <fieldset><legend>Can I keep going without collapsing?</legend>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-3" value="1"> <span>I can do one small thing today.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-3" value="2"> <span>My pace this week is one I could maintain.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-3" value="3"> <span>When the week breaks, I come back to the work.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-3" value="4"> <span>I am trying to continue, not to do everything at once.</span></label>
+                  </fieldset>
+                </details>
+                <details class="qrenewal-capacity">
+                  <summary>4. Collaboration</summary>
+                  <fieldset><legend>Am I using people and tools to test and develop my thinking?</legend>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-4" value="1"> <span>I use feedback, discussion and AI to help me see what I might have missed.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-4" value="2"> <span>I test what comes back rather than accept it automatically.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-4" value="3"> <span>I can explain where I agree, disagree, or remain unsure.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-4" value="4"> <span>What I keep is still my own thinking.</span></label>
+                  </fieldset>
+                </details>
+                <details class="qrenewal-capacity">
+                  <summary>5. Human Relationships</summary>
+                  <fieldset><legend>Am I carrying this alone?</legend>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-5" value="1"> <span>There is at least one person I could turn to if I was struggling.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-5" value="2"> <span>There is someone I would tell if something went well.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-5" value="3"> <span>There is someone at university I could approach if I needed to.</span></label>
+                    <label class="qrenewal-option"><input type="checkbox" name="capacity-5" value="4"> <span>I do not have to solve everything by myself.</span></label>
+                  </fieldset>
+                </details>
+                  <div class="qrenewal-next">
+                    <p><strong>A quiet next step</strong></p>
+                    <label for="qrenewal-attention">Which capacity would help you most with your next step?</label>
+                    <textarea id="qrenewal-attention" rows="2" placeholder="One area I want to pay attention to…"></textarea>
+                    <label for="qrenewal-action">What is one small thing you could do today?</label>
+                    <textarea id="qrenewal-action" rows="2" placeholder="One small action I could try…"></textarea>
+                    <button class="qrenewal-reset" type="reset">Clear my responses</button>
+                  </div>
+                </form>
+                <p class="qrenewal-privacy">This reflection stays on this page and is not submitted or stored by this website.</p>
+                <p class="qrenewal-check-note">If several areas feel difficult, consider starting with Human Relationships: reaching out to someone you trust can make the next step easier.</p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
