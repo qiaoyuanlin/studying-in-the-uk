@@ -503,10 +503,17 @@
     /* AI takeaway and resource note */
     .ai-takeaway {
       margin-top: 34px;
-      max-width: 780px;
+      width: 100%;
+      max-width: none;
       padding: 25px 30px;
       background: var(--soft);
       border-left: 3px solid var(--green);
+    }
+    .ai-item .button,
+    .ai-takeaway .button {
+      width: 220px;
+      max-width: 100%;
+      text-align: center;
     }
     .ai-takeaway p:last-child { margin-bottom: 0; }
     .resources-note { margin-top: 28px; color: var(--muted); }
@@ -912,28 +919,19 @@
           <div class="ai-item">
             <h3>Quality</h3>
             <p>How can we examine AI outputs for direction, expression and meaning?</p>
-            <span class="status">Coming soon</span>
+            <a class="button button-primary" href="quality-check.html">Start Quality Check</a>
           </div>
           <div class="ai-item">
             <h3>Ownership</h3>
             <p>What can we explain, justify and take responsibility for in the work we produce?</p>
-            <span class="status">Coming soon</span>
+            <a class="button button-primary" href="ownership-check.html">Start Ownership Check</a>
           </div>
         </div>
         <div class="ai-takeaway">
           <h3>What remains with you?</h3>
-          <p>
-            After working with AI, can you explain the ideas, apply what you have
-            learned in another situation and make judgements without relying on
-            the same assistance?
-          </p>
-          <p>
-            Through developing workshops, examples and activities, this project
-            explores how AI can support meaningful learning while strengthening,
-            rather than replacing, human judgement and independence.
-          </p>
+          <p>After working with AI, what have you learned? What can you now explain, apply or do independently?</p>
+          <a class="button button-primary" href="what-remains.html">Start Reflection</a>
         </div>
-        <p class="resources-note">Workshops and practical activities will be added as the project develops.</p>
       </div>
     </section>
 
