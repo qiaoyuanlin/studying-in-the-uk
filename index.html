@@ -291,6 +291,44 @@
       margin-top: 12px;
     }
 
+    /* Student Resources: hero-artwork-inspired accents, isolated from other cards */
+    #resources .resource-card {
+      --resource-accent: #263D73;
+      display: flex;
+      flex-direction: column;
+      border-left: 5px solid var(--resource-accent);
+      padding-left: 30px;
+    }
+    #resources .resource-card:nth-child(2) { --resource-accent: #7180A2; }
+    #resources .resource-card:nth-child(3) { --resource-accent: #98546A; }
+    #resources .resource-card:nth-child(4) { --resource-accent: #D66D68; }
+    #resources .resource-card .card-number { color: var(--resource-accent); }
+    #resources .resource-card .resource-end { margin-top: auto; padding-top: 12px; }
+    #resources .resource-card p { margin-bottom: 0; }
+    #resources .resource-card .resource-end .status { margin: 0; }
+    #resources a.resource-card,
+    #resources a.resource-card:visited {
+      color: inherit;
+      text-decoration: none;
+      transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+    }
+    #resources a.resource-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(32,56,78,.10);
+    }
+    #resources a.resource-card:focus-visible {
+      outline: 3px solid var(--resource-accent);
+      outline-offset: 4px;
+    }
+    #resources .resource-card .status { margin-top: 0; }
+    @media (max-width: 760px) {
+      #resources .resource-card { padding-left: 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #resources a.resource-card { transition: none; }
+      #resources a.resource-card:hover { transform: none; }
+    }
+
     /* Book: editorial two-column opening, with a full-width supporting note */
     .book-section { background: var(--soft); }
     .book-layout {
@@ -866,30 +904,30 @@
           and downloadable worksheets organised around challenges students actually face.
         </p>
         <div class="cards">
-          <article class="card">
-            <div class="card-number">RESOURCE 01</div>
+          <a class="card resource-card" href="understanding-assignment.html" aria-label="Understanding an Assignment — explore the five student problems">
+            <div class="card-number">LEARNING AREA 01</div>
             <h3>Understanding an Assignment</h3>
             <p>Work out what the brief asks, what the marking criteria value and where to begin.</p>
-            <span class="status">Coming soon</span>
-          </article>
-          <article class="card">
-            <div class="card-number">RESOURCE 02</div>
+            <div class="resource-end"><span class="status">Explore problems</span></div>
+          </a>
+          <a class="card resource-card" href="finding-direction.html" aria-label="Finding Direction — explore the five student problems">
+            <div class="card-number">LEARNING AREA 02</div>
             <h3>Finding Direction</h3>
             <p>Reflect on where you are, what matters now and how to choose a manageable next step.</p>
-            <span class="status">Coming soon</span>
-          </article>
-          <article class="card">
-            <div class="card-number">RESOURCE 03</div>
+            <div class="resource-end"><span class="status">Explore problems</span></div>
+          </a>
+          <a class="card resource-card" href="developing-argument.html" aria-label="Developing an Argument — explore the five student problems">
+            <div class="card-number">LEARNING AREA 03</div>
             <h3>Developing an Argument</h3>
             <p>Connect ideas and evidence, make reasoning visible and reach a judgement you can defend.</p>
-            <span class="status">Coming soon</span>
-          </article>
-          <article class="card">
-            <div class="card-number">RESOURCE 04</div>
+            <div class="resource-end"><span class="status">Explore problems</span></div>
+          </a>
+          <a class="card resource-card" href="learning-beyond-university.html" aria-label="Learning Beyond University — explore the five student problems">
+            <div class="card-number">LEARNING AREA 04</div>
             <h3>Learning Beyond University</h3>
             <p>Consider what you are developing through study and what you can carry into unfamiliar situations.</p>
-            <span class="status">Coming soon</span>
-          </article>
+            <div class="resource-end"><span class="status">Explore problems</span></div>
+          </a>
         </div>
       </div>
     </section>
