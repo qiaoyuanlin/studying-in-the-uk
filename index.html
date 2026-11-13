@@ -459,6 +459,20 @@
       .qrenewal-check { padding: 14px; }
     }
 
+
+    /* Separate Quiet Self-Check page: preserve the original bar */
+    .qrenewal-check-link {
+      display: block;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .qrenewal-check-link:hover { color: var(--green); }
+    .qrenewal-check-link:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+    .qrenewal-check-link span { font-size: 15px; margin-right: 8px; }
+
     /* AI section */
 
     .ai-section {
@@ -562,6 +576,61 @@
 
     .about-content {
       max-width: 900px;
+    }
+
+    /* Letter invitation: colours and faceted diagonals echo the letter page. */
+    .author-portrait-column {
+      width: 220px;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .author-letter-link {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      width: 100%;
+      min-height: 58px;
+      padding: 12px 13px;
+      overflow: hidden;
+      border-radius: 6px;
+      background: linear-gradient(125deg, #33426f 0%, #565d86 54%, #8284a4 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+      transition: filter .2s ease;
+    }
+    .author-letter-link::before,
+    .author-letter-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .author-letter-link::before {
+      background: linear-gradient(130deg, rgba(182,83,105,.42), rgba(182,83,105,.12));
+      clip-path: polygon(0 0, 33% 0, 0 82%);
+    }
+    .author-letter-link::after {
+      background: linear-gradient(135deg, rgba(234,236,245,.06), rgba(228,230,241,.56));
+      clip-path: polygon(100% 0, 100% 100%, 59% 100%);
+    }
+    .author-letter-link:hover { filter: brightness(1.10); }
+    .author-letter-link:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 4px;
+    }
+    .author-letter-icon { width: 20px; height: 20px; flex: 0 0 20px; color: #ffd2d9; }
+    @media (max-width: 600px) {
+      .author-portrait-column { width: 190px; }
+      .author-letter-link { font-size: 12px; padding: 11px 9px; gap: 7px; }
+      .author-letter-icon { width: 18px; height: 18px; flex-basis: 18px; }
     }
 
     /* Footer */
@@ -774,81 +843,13 @@
             </figure>
           </div>
           <div class="qrenewal-content">
-            <p>
-              The QRenewal Learning System brings together four connected capacities—Structure,
-              Judgement, Rhythm and Collaboration—supported by Human Relationships.
-            </p>
-            <p>
-              These are capacities you may already draw upon in your learning. The system
-              offers a way to recognise what is helping, notice what needs attention and find
-              a starting point again. It is not a fixed formula.
-            </p>
-            <p>Try the Quiet Self-Check below to consider where your learning needs attention and choose one small next step. There are no scores or right answers.</p>
-            <details class="qrenewal-check">
-              <summary>A Quiet Self-Check</summary>
-              <p class="qrenewal-check-note">Reflect on your learning · Choose one next step · No scores</p>
-              <div class="qrenewal-check-body">
-                <p>Think about an assignment, project or another task you are working on. What are you trying to achieve, and what stage have you reached?</p>
-                <p>Tick any statements that describe your current situation. This is not an assessment of your ability or worth.</p>
-                <form class="qrenewal-check-form">
-                <details class="qrenewal-capacity">
-                  <summary>1. Structure</summary>
-                  <fieldset><legend>Do I know what I am doing?</legend>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-1" value="1"> <span>I understand the task in front of me.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-1" value="2"> <span>I know the next small step.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-1" value="3"> <span>I can see how the parts of this fit together.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-1" value="4"> <span>My deadlines and materials are somewhere I can find them.</span></label>
-                  </fieldset>
-                </details>
-                <details class="qrenewal-capacity">
-                  <summary>2. Judgement</summary>
-                  <fieldset><legend>Am I working out what matters and what I can stand behind?</legend>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-2" value="1"> <span>I can identify what matters most here.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-2" value="2"> <span>I can name what is still unclear to me.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-2" value="3"> <span>I question, compare, or test before I settle on a view.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-2" value="4"> <span>I can explain the position I have reached and why.</span></label>
-                  </fieldset>
-                </details>
-                <details class="qrenewal-capacity">
-                  <summary>3. Rhythm</summary>
-                  <fieldset><legend>Can I keep going without collapsing?</legend>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-3" value="1"> <span>I can do one small thing today.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-3" value="2"> <span>My pace this week is one I could maintain.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-3" value="3"> <span>When the week breaks, I come back to the work.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-3" value="4"> <span>I am trying to continue, not to do everything at once.</span></label>
-                  </fieldset>
-                </details>
-                <details class="qrenewal-capacity">
-                  <summary>4. Collaboration</summary>
-                  <fieldset><legend>Am I using people and tools to test and develop my thinking?</legend>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-4" value="1"> <span>I use feedback, discussion and AI to help me see what I might have missed.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-4" value="2"> <span>I test what comes back rather than accept it automatically.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-4" value="3"> <span>I can explain where I agree, disagree, or remain unsure.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-4" value="4"> <span>What I keep is still my own thinking.</span></label>
-                  </fieldset>
-                </details>
-                <details class="qrenewal-capacity">
-                  <summary>5. Human Relationships</summary>
-                  <fieldset><legend>Am I carrying this alone?</legend>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-5" value="1"> <span>There is at least one person I could turn to if I was struggling.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-5" value="2"> <span>There is someone I would tell if something went well.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-5" value="3"> <span>There is someone at university I could approach if I needed to.</span></label>
-                    <label class="qrenewal-option"><input type="checkbox" name="capacity-5" value="4"> <span>I do not have to solve everything by myself.</span></label>
-                  </fieldset>
-                </details>
-                  <div class="qrenewal-next">
-                    <p><strong>A quiet next step</strong></p>
-                    <label for="qrenewal-attention">Which capacity would help you most with your next step?</label>
-                    <textarea id="qrenewal-attention" rows="2" placeholder="One area I want to pay attention to…"></textarea>
-                    <label for="qrenewal-action">What is one small thing you could do today?</label>
-                    <textarea id="qrenewal-action" rows="2" placeholder="One small action I could try…"></textarea>
-                    <button class="qrenewal-reset" type="reset">Clear my responses</button>
-                  </div>
-                </form>
-                <p class="qrenewal-privacy">This reflection stays on this page and is not submitted or stored by this website.</p>
-                <p class="qrenewal-check-note">If several areas feel difficult, consider starting with Human Relationships: reaching out to someone you trust can make the next step easier.</p>
-              </div>
-            </details>
+            <p>You may be working hard but still feel stuck, uncertain or unable to make progress. Sometimes, the answer is not to work harder, but to understand what is holding you back and what might help.</p>
+            <p>The <strong>QRenewal Learning System</strong> brings together four connected capacities—<strong>Structure, Judgement, Rhythm and Collaboration</strong>—supported by <strong>Human Relationships</strong>.</p>
+            <p>These are capacities you may already use in your learning. The system helps you recognise what is working, identify what needs attention and find a way forward. It is not a fixed formula.</p>
+            <p>Try the Quiet Self-Check to reflect on your learning and discover one small step forward. There are no scores or right answers.</p>
+            <div class="qrenewal-check">
+              <a class="qrenewal-check-link" href="quiet-self-check.html"><span aria-hidden="true">&#9654;</span> A Quiet Self-Check</a>
+            </div>
           </div>
         </div>
       </div>
@@ -942,35 +943,34 @@
           <div class="section-label">About the Project</div>
           <h2>About Studying in the UK</h2>
           <p>
-            <em>Studying in the UK</em> is an educational project built around the
-            forthcoming Routledge book <em>Your Guide to Studying in the UK</em>.
-            It brings together ideas, practical resources and learning activities
-            to support students in navigating university life while developing
-            the judgement, agency and confidence that can remain valuable beyond
-            their degrees.
+            <em>Studying in the UK</em> is an evolving educational project
+            accompanying the forthcoming Routledge book. It offers practical
+            resources and learning activities to help students navigate university
+            study while developing judgement, agency and confidence.
           </p>
           <p>
-            The project explores how students learn through everyday academic
-            experiences — understanding unfamiliar expectations, developing
-            their own thinking, making decisions, working with others and
-            responding to challenges.
+            Beginning with the experiences explored in the book, the project will
+            continue to develop through teaching, student feedback and educational
+            inquiry. Particular attention is given to learning with AI while
+            maintaining understanding, independence and responsibility for one's learning.
           </p>
           <p>
-            An important part of this work is learning with AI. Rather than
-            focusing only on how to use AI effectively, the project considers
-            how students can work with intelligent tools while continuing to
-            develop their own understanding, exercise judgement, take
-            responsibility for their decisions and build abilities they can
-            use in new situations.
-          </p>
-          <p>
-            As the project develops, additional resources, examples and
-            activities will be introduced to help students put these ideas
-            into practice.
+            As the project develops, additional resources, examples and activities
+            will be introduced to help students put these ideas into practice.
           </p>
 
           <div class="author-profile">
-            <img src="author.png" alt="Qiaoyuan Lin" class="author-photo" width="220" height="220">
+            <div class="author-portrait-column">
+              <img src="author.png" alt="Qiaoyuan Lin" class="author-photo" width="220" height="220">
+              <a class="author-letter-link" href="letter-to-students.html">
+                <svg class="author-letter-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 10V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5"/>
+                  <path d="m4 8 8 5 8-5"/>
+                  <path d="M3 10v9a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9l-9 6-9-6Z"/>
+                </svg>
+                <span>A Letter to Students</span>
+              </a>
+            </div>
             <div class="author-info">
               <h3>Qiaoyuan Lin</h3>
               <p class="author-role">Author of <em>Your Guide to Studying in the UK</em></p>
