@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Practical student resources for finding direction, recognising learning difficulties and taking manageable steps." name="description"/>
+<title>Finding Direction | Studying in the UK</title>
+<style>
+    :root {
+      --navy: #20384e;
+      --navy-dark: #162d42;
+      --green: #7180A2;
+      --accent: #7180A2;
+      --ivory: #F6E9DA;
+      --ink: #34495b;
+      --muted: #60717d;
+      --background: #f8f9f7;
+      --white: #ffffff;
+      --line: #dfe7e6;
+      --soft: #EEF0F6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--background); font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+    a { color: var(--green); }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--green); outline-offset: 4px; }
+    .container { width: min(100% - 40px, 1040px); margin-inline: auto; }
+    .topbar { background: var(--white); border-bottom: 1px solid var(--line); }
+    .topbar-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { text-decoration: none; color: var(--navy); font-family: Georgia, "Times New Roman", serif; font-size: 21px; line-height: 1.35; }
+    .brand:hover { text-decoration: underline; }
+    main { padding-block: 30px 76px; }
+    .breadcrumb { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; color: var(--muted); font-size: 13px; margin-bottom: 32px; }
+    .breadcrumb a { color: inherit; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .eyebrow { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { font: normal clamp(32px, 4.5vw, 43px)/1.2 Georgia, "Times New Roman", serif; color: var(--navy); margin: 12px 0 22px; }
+    .intro { max-width: 100%; margin: 0 0 38px; color: var(--ink); font-size: 16px; background: #fbf6ed; border: 1px solid #ebdecd; border-radius: 8px; padding: 20px 26px; }
+    .section-heading { color: var(--navy); font-size: 19px; margin: 0 0 18px; font-weight: 650; }
+    .problem-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .problem-card { padding: 30px 33px; background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; display: flex; flex-direction: column; align-items: flex-start; min-height: 246px; }
+    .problem-number { font-size: 12px; color: var(--green); font-weight: 700; letter-spacing: .08em; }
+    .problem-card h3 { font-size: 18px; line-height: 1.5; color: var(--navy-dark); margin: 18px 0 10px; }
+    .problem-card p { color: var(--muted); margin: 0 0 22px; font-size: 15px; }
+    .status { margin-top: auto; background: var(--soft); padding: 5px 11px; border-radius: 4px; color: var(--green); font-size: 12px; }
+    .note { margin-top: 30px; max-width: 780px; font-size: 14px; color: var(--muted); }
+    .return-link { display: inline-block; margin-top: 30px; font-weight: 600; text-underline-offset: 3px; }
+    footer { border-top: 1px solid var(--line); padding: 20px 0 34px; color: var(--muted); font-size: 13px; }
+    [hidden] { display: none !important; }
+    @media (max-width: 680px) {
+      .container { width: min(100% - 32px, 1040px); }
+      .topbar-inner { min-height: 68px; }
+      .brand { font-size: 18px; }
+      main { padding-top: 22px; }
+      .problem-grid { grid-template-columns: 1fr; gap: 15px; }
+      .problem-card { min-height: 0; padding: 23px; }
+      .intro { padding: 16px 18px; }
+      .intro { margin-bottom: 28px; }
+    }
+  
+    .problem-card { min-height: 225px; }
+    @media (max-width: 680px) { .problem-card { min-height: 0; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+<div class="container topbar-inner">
+<a class="brand" href="./index.html#home">Studying in the UK</a>
+</div>
+</header>
+<main class="container" id="main-content">
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a href="./index.html#resources">Student Resources</a>
+<span aria-hidden="true">/</span>
+<span aria-current="page">Finding Direction</span>
+</nav>
+<p class="eyebrow">PRACTICAL LEARNING · AREA 02</p>
+<h1>Finding Direction</h1>
+<p class="intro">Sometimes you are studying but feel uncertain about where you are going, why your work matters or how to move forward. You may have a clear goal and still find it difficult to act. These resources help you recognise what is happening, consider what matters to you and choose a practical next step. Start with whichever problem feels relevant.</p>
+<section aria-labelledby="problems-title">
+<h2 class="section-heading" id="problems-title">Which problem are you facing?</h2>
+<!-- To add another problem later, copy a <article class="problem-card"> block and update its content. -->
+<div class="problem-grid">
+<article class="problem-card">
+<span class="problem-number">PROBLEM 01</span>
+<h3>I’m studying, but I’m not sure why it matters to me.</h3>
+<p>Explore what is motivating your studies and what you would like your learning to mean.</p>
+<span class="status">Coming soon</span>
+</article>
+<article class="problem-card">
+<span class="problem-number">PROBLEM 02</span>
+<h3>I know what I want to achieve, but I can’t get started.</h3>
+<p>Identify what is stopping you and choose a small step you can actually try.</p>
+<span class="status">Coming soon</span>
+</article>
+<article class="problem-card">
+<span class="problem-number">PROBLEM 03</span>
+<h3>I have too much to do and don’t know what to prioritise.</h3>
+<p>Consider your commitments, identify what matters most now and decide what to tackle next.</p>
+<span class="status">Coming soon</span>
+</article>
+<article class="problem-card">
+<span class="problem-number">PROBLEM 04</span>
+<h3>I’m working hard, but I don’t feel I’m making progress.</h3>
+<p>Examine whether your actions are moving you towards the result you want and what might need adjusting.</p>
+<span class="status">Coming soon</span>
+</article>
+<article class="problem-card">
+<span class="problem-number">PROBLEM 05</span>
+<h3>I’m following a path, but I’m not sure it’s the one I want.</h3>
+<p>Reflect on your own goals and outside expectations without assuming you must reject either.</p>
+<span class="status">Coming soon</span>
+</article>
+</div>
+</section>
+<p class="note">These activities are starting points for reflection and action, not tests of motivation or wellbeing. If studying feels unmanageable or you need personal support, contact your university’s student support or wellbeing service. New activities will be added gradually.</p>
+<a class="return-link" href="./index.html#resources">← Back to Student Resources</a>
+</main>
+<footer><div class="container">Studying in the UK · Practical Learning</div></footer>
+</body>
+</html>
